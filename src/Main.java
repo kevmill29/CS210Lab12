@@ -9,7 +9,7 @@ public class Main {
         System.out.print("1.-------------\n");
         Scanner input = new Scanner(System.in);
         char[][]seats={
-                {'O','O','O','O','O'},
+                {'V','O','O','O','O'},
                 {'O','O','O','O','O'},
                 {'O','O','O','O','O'}
         };
@@ -32,7 +32,9 @@ public class Main {
         }
 
         System.out.print("You have selected Row and Column: "+(row+1)+","+(col+1)+".");
-        System.out.print("\nThank you for booking! Please confirm your seat booking? \n(1 = Yes/ 2 = No) : ");
+        System.out.print(
+                "\nThank you for booking! Please confirm your seat booking?" +
+                " \n(1 = Yes/ 2 = No) : ");
         int confirm = input.nextInt();
         if(confirm == 1){
             if(bookSeat(seats, row, col)){
@@ -42,11 +44,11 @@ public class Main {
             }
 
         }else{
-            System.out.print("Booking Canceled");
+            System.out.print("Booking Canceled! Please Try Again!");
         }
 
         displaySeating(seats);
-
+        System.out.println();
         System.out.print("Full rows: "+ checkFullRows(seats));
         System.out.println();
 
@@ -112,7 +114,7 @@ public class Main {
             }
         }
         if(full){
-            fullRows.add(i);
+            fullRows.add(i+1);
         }
     }
     return fullRows;
@@ -151,9 +153,10 @@ public class Main {
 
     //Question 3
     public static void printData(int num,double doubleNum,  int[] arr, int[][] arr2D){
-        System.out.println();
+        //Prints z
         System.out.println(num);
         System.out.println();
+
         System.out.println(doubleNum);
         System.out.println();
         //Print 1D Array
